@@ -64,13 +64,7 @@
             <div class="comicpage">
                 {volist name="photos" id="vo"}
                 <div>
-                    {if empty($vo.img_url)}
-                    <img class="lazy"
-                         data-original="{$img_site}/static/upload/book/{$chapter.book.id}/{$chapter.id}/{$vo.id}.jpg"
-                         src="https://s1.ax1x.com/2018/12/27/FRm2Ks.jpg">
-                    {else /}
                     <img class="lazy" data-original="{$vo.img_url}" src="https://s1.ax1x.com/2018/12/27/FRm2Ks.jpg">
-                    {/if}
                 </div>
                 {/volist}
             </div>

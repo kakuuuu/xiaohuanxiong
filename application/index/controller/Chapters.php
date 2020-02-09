@@ -26,7 +26,7 @@ class Chapters extends Base
     public function index($id)
     {
         $chapter = Chapter::with('book')->cache('chapter:' . $id, 600, 'redis')->find($id);
-        if (empty($chapter->book->cover_url)) {
+        if (empty($chapter->book->img_url)) {
             $chapter->book->cover_url = $this->img_site.'/static/upload/book/'.$chapter->book_id.'/cover.jpg';
         }
         if ($this->end_point == 'id') {

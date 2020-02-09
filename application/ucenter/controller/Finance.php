@@ -225,7 +225,7 @@ class Finance extends BaseUcenter
             if (!$redis->exists($this->redis_prefix . ':user_buy_lock:' . $this->uid)) { //如果没上锁，则该用户可以进行购买操作
                 $this->balance = $this->financeService->getBalance($this->uid); //这里不查询缓存，直接查数据库更准确
                 if ($price > $this->balance) { //如果价格高于用户余额，则不能购买
-                    return ['err' => 1, 'msg' => '余额不足'];
+                    return json(['err' => 1, 'msg' => '余额不足']);
                 } else {
                     $userFinance = new UserFinance();
                     $userFinance->user_id = $this->uid;
@@ -244,9 +244,9 @@ class Finance extends BaseUcenter
                 }
                 $redis->set($this->redis_prefix . ':user_buy_lock:' . $this->uid, 1, 5);
                 Cache::clear('pay'); //删除缓存
-                return ['err' => 0, 'msg' => '购买成功，等待跳转'];
+                return json(['err' => 0, 'msg' => '购买成功，等待跳转']);
             } else {
-                return ['err' => 1, 'msg' => '同账号非法操作'];
+                return json(['err' => 1, 'msg' => '同账号非法操作']);
             }
         }
         $this->assign([
@@ -269,7 +269,7 @@ class Finance extends BaseUcenter
                 foreach ($arr as $key => $value) {
                     if ((int)$value['month'] == $month) {
                         if ((int)$value['price'] > $this->balance) { //如果vip价格大于用户余额
-                            return ['err' => 1, 'msg' => '余额不足，请先充值'];
+                            return json(['err' => 1, 'msg' => '余额不足，请先充值']);
                         } else { //处理购买vip的订单
                             $finance = new UserFinance();
                             $finance->user_id = $this->uid;
@@ -287,14 +287,14 @@ class Finance extends BaseUcenter
                             $user->isupdate(true)->save();
                             session('xwx_vip_expire_time', $user->vip_expire_time); //更新session
                             Cache::clear('pay'); //删除缓存
-                            return ['err' => 0, 'msg' => '购买成功，等待跳转'];
+                            return json(['err' => 0, 'msg' => '购买成功，等待跳转']);
                         }
                     }
                 }
                 $redis->set($this->redis_prefix . ':user_buy_lock:' . $this->uid, 1, 5);
-                return ['err' => 1, 'msg' => '请选择正确的选项']; //以防用户篡改页面的提交值
+                return json(['err' => 1, 'msg' => '请选择正确的选项']); //以防用户篡改页面的提交值
             } else {
-                return ['err' => -1, 'msg' => '同账号非法操作'];
+                return json(['err' => -1, 'msg' => '同账号非法操作']);
             }
         }
 

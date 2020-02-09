@@ -47,17 +47,17 @@
                     <table class="table table-border table-bordered table-bg table-hover table-sort">
                         <thead>
                         <tr class="text-c">
-                            <th width="40"><input id="cbx" type="checkbox" value=""></th>
-                            <th width="80">ID</th>
-                            <th width="120">漫画名</th>
-                            <th width="100">封面</th>
-                            <th width="80">章节数</th>
-                            <th width="120">分类</th>
-                            <th width="100">地区</th>
-                            <th width="80">起始付费章节</th>
-                            <th width="80">章节价格</th>
-                            <th width="80">是否完结</th>
-                            <th width="140">操作</th>
+                            <th><input id="cbx" type="checkbox" value=""></th>
+                            <th>ID</th>
+                            <th>漫画名</th>
+                            <th>封面</th>
+                            <th>章节数</th>
+                            <th>分类</th>
+                            <th>地区</th>
+                            <th>起始付费章节</th>
+                            <th>章节价格</th>
+                            <th>是否完结</th>
+                            <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -83,7 +83,7 @@
                             <td>{$vo.money}</td>
                             <td>{$vo.end?"完结":"连载中"}</td>
                             <td class="f-14 td-manage">
-                                <a onclick="editCreate('章节管理','/admin/chapters/index?book_id={$vo.id}')"
+                                <a onclick="editCreate('章节管理','{:url(\'chapters/index\',[\'book_id\' => $vo.id])}')"
                                    class="btn radius btn-success size-S">章节管理</a>
                                 <a style="text-decoration:none" class="ml-5"
                                    onclick="editCreate('漫画编辑','edit?id={$vo.id}')">
@@ -123,7 +123,7 @@
         } else {
             $.ajax({
                 type:'post',
-                url: '/admin/books/deleteAll',
+                url: '{:url("books/deleteAll")}',
                 data: {ids: arr},
                 success(res){
                     layer.msg('批量删除成功', {icon: 1, time: 1000}, function () {

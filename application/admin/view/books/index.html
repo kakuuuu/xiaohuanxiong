@@ -85,7 +85,7 @@
                             <td>{$vo.money}</td>
                             <td>{$vo.end?"完结":"连载中"}</td>
                             <td class="f-14 td-manage">
-                                <a onclick="editCreate('章节管理','/admin/chapters/index?book_id={$vo.id}')"
+                                <a onclick="editCreate('章节管理','{:url(\'chapters/index\',[\'book_id\' => $vo.id])}')"
                                    class="btn radius btn-success size-S">章节管理</a>
                                 <a style="text-decoration:none" class="ml-5"
                                    onclick="editCreate('漫画编辑','edit?id={$vo.id}')">
