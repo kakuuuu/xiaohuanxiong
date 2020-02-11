@@ -43,7 +43,12 @@ class Sitemap extends BaseAdmin
         );
 
         $books = Book::all();
-        foreach ($books as $key=>$book){ //这里构建所有的内容页数组
+        foreach ($books as &$book){ //这里构建所有的内容页数组
+            if ($this->end_point == 'id') {
+                $book['param'] = $book['id'];
+            } else {
+                $book['param'] = $book['unique_id'];
+            }
             $temp = array(
                 'loc' => $site_name.'/'.BOOKCTRL.'/'.$book->id,
                 'priority' => '0.9',
