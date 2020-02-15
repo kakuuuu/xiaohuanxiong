@@ -14,19 +14,20 @@
 </head>
 
 <body class="bg-gray">
-{block name="content"}
-{/block}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
-<script>
-    $("img.lazy")
-        .lazyload({
-            event: "lazyload",
-            effect: "fadeIn",
-            effectspeed: 2000
-        })
-        .trigger("lazyload");
-</script>
-{include file="./template/default/pub/others.html"}
+    
+    {block name="content"}
+    {/block}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+    <script>
+        $("img.lazy")
+            .lazyload({
+                event: "lazyload",
+                effect: "fadeIn",
+                effectspeed: 2000
+            })
+            .trigger("lazyload");
+    </script>
+    {include file="./template/default/pub/others.html"}
 </body>
 
 </html>
