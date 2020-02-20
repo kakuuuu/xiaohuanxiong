@@ -2,22 +2,83 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e28971b-6d16-47ff-83e3-4ccc7a041382" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/application/api/controller/Huiju.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/api/controller/Sitemap.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/pay/iPay.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/index/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/api/controller/Common.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/api/controller/Common.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/ucenter/controller/Finance.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/ucenter/controller/Finance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/unittest/controller/Es.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extend/util/Faka.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/pay/Faka.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extend/util/Vkzf.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/extend/util/Zhapay.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/pay/Zhapay.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/ucenter/finance/charge.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/ucenter/finance/charge.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/ucenter/finance/pc_charge.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/ucenter/finance/pc_charge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13676.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13677.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13678.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13679.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13680.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13681.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13682.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13683.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13684.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13685.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13686.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13687.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13688.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13689.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13690.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13691.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13692.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13693.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13694.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13695.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13696.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13697.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13698.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13699.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13700.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13701.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13702.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13703.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13704.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13705.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13706.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13707.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13708.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13709.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13710.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13711.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13712.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13713.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13714.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13715.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13716.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13717.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13718.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13719.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13720.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13721.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13722.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13723.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13724.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13725.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13726.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13727.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13728.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13729.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13730.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13731.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13732.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13733.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13734.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13735.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13737.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13738.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13739.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13740.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13741.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13742.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13743.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13744.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13745.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13746.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13747.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13748.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13749.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13750.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13751.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13752.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/upload/book/28/115/13753.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -676,7 +737,7 @@
       <workItem from="1582122046796" duration="1542000" />
       <workItem from="1582169418897" duration="60000" />
       <workItem from="1582184736414" duration="162000" />
-      <workItem from="1582200896551" duration="842000" />
+      <workItem from="1582200896551" duration="1091000" />
     </task>
     <servers />
   </component>
