@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Util;
+namespace app\pay;
 
 
-class Zhapay
+class Zhapay implements iPay
 {
-    public function submit($order_id, $money, $pay_type)
+    public function submit($order_id, $money, $pay_type, $pay_code)
     {
         $mch_id = trim(config('payment.zhapay.appid'));//这里改成支付ID
         $mch_key = trim(config('payment.zhapay.appkey')); //这是您的通讯密钥

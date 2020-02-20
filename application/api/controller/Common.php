@@ -23,25 +23,25 @@ class Common extends Controller
     {
         $key = input('api_key');
         if (empty($key) || is_null($key)) {
-            return 'api密钥不能为空！';
+            return json(['success' => 0, 'msg' => 'api密钥不能为空']);
         }
         if ($key != config('site.api_key')) {
-            return 'api密钥错误！';
+            return json(['success' => 0, 'msg' => 'api密钥错误']);
         }
         Cache::clear('redis');
         $rootPath = App::getRootPath();
         delete_dir_file($rootPath . '/runtime/cache/') && delete_dir_file($rootPath . '/runtime/temp/');
-        return '清理成功';
+        return json(['success' => 1, 'msg' => '清理成功']);
     }
 
     public function sycnclicks()
     {
         $key = input('api_key');
         if (empty($key) || is_null($key)) {
-            return 'api密钥不能为空！';
+            return json(['success' => 0, 'msg' => 'api密钥不能为空']);
         }
         if ($key != config('site.api_key')) {
-            return 'api密钥错误！';
+            return json(['success' => 0, 'msg' => 'api密钥错误']);
         }
         $day = input('date');
         if (empty($day)) {
@@ -64,12 +64,12 @@ class Common extends Controller
 
     public function genvipcode()
     {
-        $api_key = input('api_key');
-        if (empty($api_key) || is_null($api_key)) {
-            $this->error('api密钥错误');
+        $key = input('api_key');
+        if (empty($key) || is_null($key)) {
+            return json(['success' => 0, 'msg' => 'api密钥不能为空']);
         }
-        if ($api_key != config('site.api_key')) {
-            $this->error('api密钥错误');
+        if ($key != config('site.api_key')) {
+            return json(['success' => 0, 'msg' => 'api密钥错误']);
         }
         $num = (int)config('kami.vipcode.num'); //产生多少个
         $day = config('kami.vipcode.day');
@@ -81,7 +81,7 @@ class Common extends Controller
             ],
             'app\admin\validate\Vipcode');
         if (true !== $result) {
-            $this->error('后台配置错误');
+            return json(['success' => 0, 'msg' => '后台配置错误']);
         }
 
         $salt = config('site.' . config('kami.salt'));//根据配置，获取盐的方式
@@ -93,17 +93,17 @@ class Common extends Controller
             ]);
             sleep(1);
         }
-        $this->success('成功生成vip码');
+        return json(['success' => 1, 'msg' => '成功生成vip码']);
     }
 
     public function genchargecode()
     {
-        $api_key = input('api_key');
-        if (empty($api_key) || is_null($api_key)) {
-            $this->error('api密钥错误');
+        $key = input('api_key');
+        if (empty($key) || is_null($key)) {
+            return json(['success' => 0, 'msg' => 'api密钥不能为空']);
         }
-        if ($api_key != config('site.api_key')) {
-            $this->error('api密钥错误');
+        if ($key != config('site.api_key')) {
+            return json(['success' => 0, 'msg' => 'api密钥错误']);
         }
         $num = (int)config('kami.chargecode.num'); //产生多少个
         $money = config('kami.chargecode.money');
@@ -115,7 +115,7 @@ class Common extends Controller
             ],
             'app\admin\validate\Chargecode');
         if (true !== $result) {
-            $this->error('后台配置错误');
+            return json(['success' => 0, 'msg' => '后台配置错误']);
         }
 
         $salt = config('site.' . config('kami.salt'));//根据配置，获取盐的方式
@@ -127,37 +127,39 @@ class Common extends Controller
             ]);
             sleep(1);
         }
-        return json(['msg' => '成功生成充值码']);
+        return json(['success' => 1, 'msg' => '成功生成充值码']);
     }
 
     public function resetpwd()
     {
-        $api_key = input('api_key');
-        if (empty($api_key) || is_null($api_key)) {
-            $this->error('api密钥错误');
+        $key = input('api_key');
+        if (empty($key) || is_null($key)) {
+            return json(['success' => 0, 'msg' => 'api密钥不能为空']);
         }
-        if ($api_key != config('site.api_key')) {
-            $this->error('api密钥错误');
+        if ($key != config('site.api_key')) {
+            return json(['success' => 0, 'msg' => 'api密钥错误']);
         }
         $salt = input('salt');
         if (empty($salt) || is_null($salt)) {
-            $this->error('密码盐错误');
+            return json(['success' => 0, 'msg' => '密码盐错误']);
         }
         if ($salt != config('site.salt')) {
-            $this->error('密码盐错误');
+            return json(['success' => 0, 'msg' => '密码盐错误']);
         }
         $username = input('username');
         if (empty($username) || is_null($username)) {
-            $this->error('用户名不能为空');
+            return json(['success' => 0, 'msg' => '用户名不能为空']);
         }
         $pwd = input('password');
         if (empty($pwd) || is_null($pwd)) {
-            $this->error('密码不能为空');
+            return json(['success' => 0, 'msg' => '密码不能为空']);
         }
         Admin::create([
             'username' => $username,
             'password' => md5(trim($pwd).config('site.salt'))
         ]);
-        $this->success('新管理员创建成功','/admin/index/index');
+        return json(['success' => 1, 'msg' => '新管理员创建成功']);
     }
+
+
 }

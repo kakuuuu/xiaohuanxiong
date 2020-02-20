@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7e28971b-6d16-47ff-83e3-4ccc7a041382" name="Default Changelist" comment="" />
+    <list default="true" id="7e28971b-6d16-47ff-83e3-4ccc7a041382" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/application/api/controller/Huiju.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/api/controller/Sitemap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/pay/iPay.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/index/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/Common.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/api/controller/Common.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/ucenter/controller/Finance.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/ucenter/controller/Finance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/unittest/controller/Es.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extend/util/Faka.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/pay/Faka.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extend/util/Vkzf.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extend/util/Zhapay.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/pay/Zhapay.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/template/default/ucenter/finance/charge.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/ucenter/finance/charge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/template/default/ucenter/finance/pc_charge.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/ucenter/finance/pc_charge.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,11 +108,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\www\xiaohuanxiong\application\pay" />
+      <recent name="D:\www\xiaohuanxiong\extend\util" />
       <recent name="D:\www\xiaohuanxiong\application\addons\test" />
       <recent name="D:\xiaohuanxiong\public\template\zymk\index" />
       <recent name="D:\xiaohuanxiong\config" />
-      <recent name="D:\xiaohuanxiong\public\template\zymk\index\index" />
-      <recent name="F:\xiaohuanxiong\application\worker" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\www\xiaohuanxiong\public\static\images" />
@@ -649,6 +666,17 @@
       <workItem from="1581222705529" duration="84000" />
       <workItem from="1581224164948" duration="1123000" />
       <workItem from="1581257680540" duration="9000" />
+      <workItem from="1581826755233" duration="1017000" />
+      <workItem from="1581839844494" duration="2596000" />
+      <workItem from="1581842822129" duration="2635000" />
+      <workItem from="1581853389099" duration="2691000" />
+      <workItem from="1581860215284" duration="1180000" />
+      <workItem from="1581910936023" duration="1288000" />
+      <workItem from="1581917228752" duration="61000" />
+      <workItem from="1582122046796" duration="1542000" />
+      <workItem from="1582169418897" duration="60000" />
+      <workItem from="1582184736414" duration="162000" />
+      <workItem from="1582200896551" duration="842000" />
     </task>
     <servers />
   </component>
@@ -679,26 +707,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="246" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575946662845" />
-    <state x="354" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579685752539">
+    <state x="354" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581843636768">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="354" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579685752539" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578299126675">
+    <state x="354" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581843636768" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581854011339">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578299126675" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1581222787705">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581854011339" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1582169478044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581222787705" />
-    <state x="774" y="333" key="NewPhpClassDialog" timestamp="1581220776414">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582169478044" />
+    <state x="774" y="333" key="NewPhpClassDialog" timestamp="1582201232697">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="774" y="333" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581220776414" />
-    <state x="776" y="443" key="NewPhpFileDialog" timestamp="1579685601288">
+    <state x="774" y="333" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582201232697" />
+    <state x="776" y="443" key="NewPhpFileDialog" timestamp="1581853725586">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="776" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579685601288" />
+    <state x="776" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581853725586" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1578039721483">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -120,6 +120,7 @@ class Finance extends BaseUcenter
         if ($request->isPost()) {
             $money = $request->post('money'); //用户充值金额
             $pay_type = $request->post('pay_type'); //充值渠道
+            $pay_code = $request->post('code');
             $order = new UserOrder();
             $order->user_id = $this->uid;
             $order->money = $money;
@@ -128,7 +129,7 @@ class Finance extends BaseUcenter
             $order->expire_time = time() + 86400; //订单失效时间往后推一天
             $res = $order->save();
             if ($res) {
-                $this->util->submit('xwx_order_' . $order->id, $money, $pay_type); //调用功能类，进行充值处理
+                $this->util->submit('xwx_order_' . $order->id, $money, $pay_type, $pay_code); //调用功能类，进行充值处理
             }
         } else {
             if (is_null($this->util)) { //如果无支付，则直接跳卡密页面

@@ -60,7 +60,7 @@
     $('.recharge-style li').click(function () {
         $(this).addClass('active').siblings().removeClass('active');
         $('#pay_type').val($(this).attr('data-val'));
-        $('#code').valid($(this).attr('data-code'));
+        $('#code').val($(this).attr('data-code'));
     })
 
     $('#formSub').click(function () {

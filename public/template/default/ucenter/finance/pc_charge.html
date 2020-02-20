@@ -61,6 +61,7 @@
 
                     $('#money').val(checkedItem.next().find('p span.color-main span.price').text());
                     $('#pay_type').val(checkedChannel.attr('data-val'));
+                    $('#code').val(checkedChannel.attr('data-code'));
                 })
 
                 $('.goodsItem').click(function () {
@@ -69,7 +70,7 @@
                 })
                 $('.channel').click(function () {
                     $('#pay_type').val($(this).attr('data-val'));
-                    $('#code').valid($(this).attr('data-code'));
+                    $('#code').val($(this).attr('data-code'));
                 })
             </script>
             <div class="recharge-footer mb20">

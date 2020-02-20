@@ -85,17 +85,22 @@
                                     <span class="select-box" style="width:150px;">
                         <select class="select" name="payment" size="1">
                              <option value="Default"
-                                     {if $payment== 'Default'}
+                                     {if $payment == 'Default'}
                                     selected
                                     {/if}
                             >无支付</option>
+                            <option value="Huiju"
+                                    {if $payment == 'Huiju'}
+                                    selected
+                                    {/if}
+                            >汇聚支付</option>
                             <option value="Zhapay"
-                                    {if $payment== 'Zhapay'}
+                                    {if $payment == 'Zhapay'}
                                     selected
                                     {/if}
                             >幻兮支付</option>
                             <option value="Paypal"
-                                    {if $payment== 'Paypal'}
+                                    {if $payment == 'Paypal'}
                                     selected
                                     {/if}
                             >paypal支付</option>
