@@ -4,14 +4,6 @@ return [
         'channel' => [
         ]
     ],
-    'huiju' => [//汇聚支付，官网地址:https://pay.m7b.cn/
-        'appid' => '',
-        'appkey' => '',
-        'channel' => [
-            ['type' => 2, 'code' => 904, 'img' => 'alipay', 'title' => '支付宝'],
-            ['type' => 1, 'code' => 901, 'img' => 'weixin', 'title' => '微信支付']
-        ]
-    ],
     'zhapay' => [ //幻兮支付，官网地址:https://www.zhapay.com/
         'appid' => '',
         'appkey' => '',

@@ -90,6 +90,7 @@ class Books extends BaseAdmin
             $book->last_time = time();
             $str = $this->convert($data['book_name']); //生成标识
 
+           
             if (Book::where('unique_id','=',$str)->select()->count() > 0) { //如果已经存在相同标识
                 $book->unique_id = md5(time() . mt_rand(1,1000000));
                 sleep(0.1);

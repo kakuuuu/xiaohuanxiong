@@ -24,8 +24,9 @@
         "topthink/think-worker": "2.0.*",
         "firebase/php-jwt": "^5.0",
         "overtrue/pinyin": "~4.0",
-      "ext-mbstring": "*",
-      "ext-iconv": "*"
+          "ext-mbstring": "*",
+          "ext-iconv": "*",
+          "ext-json": "*"
     },
     "autoload": {
         "psr-4": {
