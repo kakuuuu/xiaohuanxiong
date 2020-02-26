@@ -22,42 +22,49 @@ class Sitemap extends BaseAdmin
             $content .= $this->create_item($data);
         }
         $content .= '</urlset>';
-        $fp = fopen($_SERVER['DOCUMENT_ROOT'] .'/sitemap.xml', 'w+');
+        $fp = fopen($_SERVER['DOCUMENT_ROOT'] . '/sitemap.xml', 'w+');
         fwrite($fp, $content);
         fclose($fp);
-        return $this->success('生成网站地图成功','/admin','',1);
+        return $this->success('生成网站地图成功', '/admin', '', 1);
     }
 
-    private function create_array(){
+    private function create_array()
+    {
         $site_name = config('site.url');
         $data = array();
         $main = array(
             'loc' => $site_name,
             'priority' => '1.0'
         );
-        $booklist= array(
-            'loc' => $site_name.'/booklist',
+        $booklist = array(
+            'loc' => $site_name . '/booklist',
             'priority' => '0.5',
             'lastmod' => date("Y-m-d"),
             'changefreq' => 'yearly'
         );
 
-        $books = Book::all();
-        foreach ($books as &$book){ //这里构建所有的内容页数组
+        $num = config('seo.sitemap_gen_num');
+        if ($num <= 0) {
+            $books = Book::all();
+        } else {
+            $books = Book::order('id', 'desc')->limit($num)->select();
+        }
+
+        foreach ($books as &$book) { //这里构建所有的内容页数组
             if ($this->end_point == 'id') {
                 $book['param'] = $book['id'];
             } else {
                 $book['param'] = $book['unique_id'];
             }
             $temp = array(
-                'loc' => $site_name.'/'.BOOKCTRL.'/'.$book->id,
+                'loc' => $site_name . '/' . BOOKCTRL . '/' . $book->id,
                 'priority' => '0.9',
             );
-            array_push( $data,$temp);
+            array_push($data, $temp);
         }
 
-        array_push($data,$main);
-        array_push($data,$booklist);
+        array_push($data, $main);
+        array_push($data, $booklist);
         return $data;
     }
 

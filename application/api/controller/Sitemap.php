@@ -44,7 +44,12 @@ class Sitemap extends Controller
             'changefreq' => 'yearly'
         );
 
-        $books = Book::all();
+        $num = config('seo.sitemap_gen_num');
+        if ($num <= 0) {
+            $books = Book::all();
+        } else {
+            $books = Book::order('id', 'desc')->limit($num)->select();
+        }
         foreach ($books as &$book){ //这里构建所有的内容页数组
             if ($this->end_point == 'id') {
                 $book['param'] = $book['id'];

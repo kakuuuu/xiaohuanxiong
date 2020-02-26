@@ -281,11 +281,13 @@ INFO;
         if ($this->request->post()) {
             $book_end_point = input('book_end_point');
             $name_format = input('name_format');
+            $num = input('sitemap_gen_num');
             $code = <<<INFO
         <?php
         return [
             'book_end_point' => '{$book_end_point}',  //分别为id和name两种形式
             'name_format' => '{$name_format}', //pure是纯拼音,permalink是拼音带连接字符串，abbr是拼音首字母，abbr_permalink是首字母加连接字符串
+            'sitemap_gen_num' => {$num} //生成最近的1000条，如果想要全部生成，则填0
         ];
 INFO;
             file_put_contents(Env::get('root_path') . 'config/seo.php', $code);
