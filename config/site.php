@@ -5,7 +5,6 @@
             'site_name' => '土豪漫画',
             'salt' => 'hanmantai',
             'api_key' => 'abcde', 
-            'app_key' => 'sssss',
+            'app_key' => 'hahmh',
             'tpl' => 'default',
-            'payment' => 'Default'         
         ];

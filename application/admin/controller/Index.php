@@ -42,10 +42,10 @@ class Index extends BaseAdmin
         $redis_prefix = config('cache.prefix');
 
         $dirs = array();
-        $dir = new DirectoryIterator(Env::get('root_path').  'public/template/');
+        $dir = new DirectoryIterator(Env::get('root_path') . 'public/template/');
         foreach ($dir as $fileinfo) {
             if ($fileinfo->isDir() && !$fileinfo->isDot()) {
-                array_push($dirs,$fileinfo->getFilename());
+                array_push($dirs, $fileinfo->getFilename());
             }
         }
 
@@ -209,7 +209,8 @@ INFO;
         }
     }
 
-    public function upgrade(){
+    public function upgrade()
+    {
         $client = new Client();
         $srcUrl = Env::get('root_path') . "/public/static/html/version.txt";
         $localVersion = (int)str_replace('.', '', file_get_contents($srcUrl));
@@ -235,13 +236,13 @@ INFO;
                             mkdir($dir, 0777, true);
                         }
                         file_put_contents($saveFileName, $data, true); //将内容写入到本地文件
-                       echo '<p style="padding-left:15px;font-weight: 400;color:#999;">升级文件' . $value . '</p>';
+                        echo '<p style="padding-left:15px;font-weight: 400;color:#999;">升级文件' . $value . '</p>';
                     }
 
                     foreach ($json['delete'] as $value) {
                         $flag = unlink(Env::get('root_path') . '/' . $value);
                         if ($flag) {
-                           echo '<p style="padding-left:15px;font-weight: 400;color:#999;">删除文件' . $value . '</p>';
+                            echo '<p style="padding-left:15px;font-weight: 400;color:#999;">删除文件' . $value . '</p>';
                         } else {
                             echo '<p style="padding-left:15px;font-weight: 400;color:#999;">删除文件失败</p>';
                         }
@@ -249,19 +250,20 @@ INFO;
 
                     foreach ($json['sql'] as $value) {
                         //Db::execute('ALTER TABLE aaa ADD `name` INT(0) NOT NULL DEFAULT 0');
-                        $value = str_replace('[prefix]',$this->prefix,$value);
+                        $value = str_replace('[prefix]', $this->prefix, $value);
                         Db::execute($value);
-                        echo '<p style="padding-left:15px;font-weight: 400;">成功执行以下SQL语句：'.$value.'</p>';
+                        echo '<p style="padding-left:15px;font-weight: 400;">成功执行以下SQL语句：' . $value . '</p>';
                     }
                 }
             }
             echo '<p style="padding-left:15px;font-weight: 400;color:#999;">升级完成</p>';
         } else {
-           echo '<p style="padding-left:15px;font-weight: 400;color:#999;">已经是最新版本！当前版本是' . $localVersion.'</p>';
+            echo '<p style="padding-left:15px;font-weight: 400;color:#999;">已经是最新版本！当前版本是' . $localVersion . '</p>';
         }
     }
 
-    public function routeconfig(){
+    public function routeconfig()
+    {
         $path = Env::get('root_path') . '/public/routeconf.php';
         if ($this->request->isPost()) {
             $conf = input('json');
@@ -273,7 +275,8 @@ INFO;
         return view();
     }
 
-    public function seo(){
+    public function seo()
+    {
         if ($this->request->post()) {
             $book_end_point = input('book_end_point');
             $name_format = input('name_format');
@@ -283,7 +286,7 @@ INFO;
         return [
             'book_end_point' => '{$book_end_point}',  //分别为id和name两种形式
             'name_format' => '{$name_format}', //pure是纯拼音,permalink是拼音带连接字符串，abbr是拼音首字母，abbr_permalink是首字母加连接字符串
-            'sitemap_gen_num' => {$num} //生成最近的1000条，如果想要全部生成，则填0
+            'sitemap_gen_num' => '{$num}' //生成最近的1000条，如果想要全部生成，则填0
         ];
 INFO;
             file_put_contents(Env::get('root_path') . 'config/seo.php', $code);
@@ -291,11 +294,11 @@ INFO;
         } else {
             $book_end_point = config('seo.book_end_point');
             $name_format = config('seo.name_format');
-            $conn_str = config('seo.conn_str');
+            $num = config('seo.sitemap_gen_num');
             $this->assign([
                 'book_end_point' => $book_end_point,
                 'name_format' => $name_format,
-                'conn_str' => $conn_str
+                'sitemap_gen_num' => $num
             ]);
             return view();
         }

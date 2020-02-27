@@ -15,7 +15,7 @@ class Pay
             "out_trade_no" => $order_id, //唯一标识 可以是用户ID,用户名,session_id(),订单ID,ip 付款后返回
             "pay_type_id" => (int)$pay_code,//1微信支付 2支付宝
             "total_fee" => $money,//金额
-            "notify_url" => config('site.url') . '/zhapaynotify',//通知地址
+            "notify_url" => config('site.url') . '/paynotify',//通知地址
             "return_url" => config('site.url') . '/feedback',//跳转地址
             "mepay_type" => 2
         ); //构造需要传递的参数
