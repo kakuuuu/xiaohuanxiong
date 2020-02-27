@@ -4,7 +4,7 @@
 namespace app\pay;
 
 
-class Zhapay implements iPay
+class Pay
 {
     public function submit($order_id, $money, $pay_type, $pay_code)
     {

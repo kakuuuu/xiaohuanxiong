@@ -1,10 +1,6 @@
 <?php
 return [
-    'default' => [ //默认无支付模式
-        'channel' => [
-        ]
-    ],
-    'zhapay' => [ //幻兮支付，官网地址:https://www.zhapay.com/
+    'pay' => [ //幻兮支付，官网地址:https://www.zhapay.com/
         'appid' => '',
         'appkey' => '',
         'channel' => [

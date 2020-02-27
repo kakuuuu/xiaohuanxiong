@@ -11,7 +11,7 @@ use think\Controller;
 use think\facade\Cache;
 use think\Request;
 
-class Zhapaynotify extends Controller
+class Notify extends Controller
 {
     public function index(Request $request)
     {
