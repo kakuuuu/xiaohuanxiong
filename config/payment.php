@@ -4,8 +4,8 @@ return [
         'appid' => '',
         'appkey' => '',
         'channel' => [
-            ['type' => 2, 'code' => 1, 'img' => 'alipay', 'title' => '支付宝'],
-            ['type' => 1, 'code' => 3, 'img' => 'weixin', 'title' => '微信支付']
+            ['type' => 1, 'code' => 2, 'img' => 'alipay', 'title' => '支付宝'], //type是小浣熊默认的，1支付宝2QQ钱包3微信支付
+            ['type' => 3, 'code' => 1, 'img' => 'weixin', 'title' => '微信支付'] //code是幻兮定义的pay_type_id，具体看幻兮文档
         ]
     ],
     'paypal' => [
