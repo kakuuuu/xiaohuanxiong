@@ -51,7 +51,7 @@ class Banners extends BaseAdmin
                     $data['pic_name'] = $info->getSaveName();
                 }
                 BannerModel::create($data);
-                $this->success('添加成功');
+                $this->success('添加成功','index', '', 1);
             } else {
                 $this->error('未上传图片');
             }
@@ -90,7 +90,7 @@ class Banners extends BaseAdmin
             $result = BannerModel::update($data);
             if ($result) {
 
-                $this->success('编辑成功');
+                $this->success('编辑成功','index', '', 1);
             } else {
                 $this->error('编辑失败');
             }

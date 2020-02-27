@@ -160,9 +160,8 @@ class Books extends BaseAdmin
                     //清理浏览器缓存
                     header("Last-Modified: " . gmdate("D, d M Y H:i:s") . "GMT");
                     header("Cache-Control: no-cache, must-revalidate");
-
                 }
-                $this->success('编辑成功');
+                $this->success('编辑成功','index', '', 1);
             } else {
                 $this->error('编辑失败');
             }

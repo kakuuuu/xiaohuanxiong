@@ -53,7 +53,7 @@ class Tag extends BaseAdmin
         }
 
 
-        $this->success('添加成功');
+        $this->success('添加成功','index', '', 1);
     }
 
     public function edit(){
@@ -81,7 +81,7 @@ class Tag extends BaseAdmin
             }
         }
 
-        $this->success('编辑成功');
+        $this->success('编辑成功','index', '', 1);
     }
 
     public function delete()
