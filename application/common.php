@@ -1,5 +1,6 @@
 <?php
-use think\facade\App;
+
+use Overtrue\Pinyin\Pinyin;
 // 应用公共文件
 define('spider_db_conn', 'xxx');
 
@@ -192,4 +193,20 @@ function random_color(){
         $c .= sprintf("%02X", mt_rand(0, 255));
     }
     return $c;
+}
+
+function convert($str){
+    $pinyin = new Pinyin();
+    $name_format = config('seo.name_format');
+    switch ($name_format) {
+        case 'pure':
+            $arr = $pinyin->convert($str);
+            $str = implode($arr,'');
+            break;
+        case 'abbr':
+            $str = $pinyin->abbr($str);break;
+        default:
+            $str = $pinyin->convert($str);break;
+    }
+    return $str;
 }
