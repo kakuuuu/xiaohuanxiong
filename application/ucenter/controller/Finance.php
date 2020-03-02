@@ -129,10 +129,6 @@ class Finance extends BaseUcenter
                 $pay->submit('xwx_order_' . $order->id, $money, $pay_type, $pay_code); //调用功能类，进行充值处理
             }
         } else {
-            if (is_null($this->util)) { //如果无支付，则直接跳卡密页面
-                return redirect('/kami');
-            }
-
             $payment = strtolower(config('site.payment'));
             $payments = config('payment.pay.channel');
             $this->assign([
