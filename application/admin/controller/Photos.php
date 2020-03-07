@@ -34,7 +34,6 @@ class Photos extends BaseAdmin
         $page = config('page.back_end_page');
         $data = $this->photoService->getAdminPaged($chapter_id, $page);
         foreach ($data['photos'] as &$photo) {
-            halt($photo);
             if (empty($photo['img_url'])) {
                 $photo['img_url'] = $this->img_site . '/static/upload/book/' . $book_id . '/' . $chapter_id . '/' . $photo['id'] . '.jpg';
             }
