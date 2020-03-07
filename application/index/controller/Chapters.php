@@ -75,7 +75,7 @@ class Chapters extends Base
             $data = $this->photoService->getPaged($chapter->id, $page, $num); //图片分页数据
 
             $book_id = $chapter->book_id;
-            foreach ($data as &$photo) {
+            foreach ($data['photos'] as &$photo) {
                 if (empty($photo['img_url'])) {
                     $photo['img_url'] = $this->img_site.'/static/upload/book/'.$book_id.'/'.$id.'/'.$photo['id'].'.jpg';
                 }

@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: hiliq 
+ * User: hiliq
  * Date: 2018/10/6
  * Time: 20:44
  */
@@ -25,47 +25,52 @@ class Photos extends BaseAdmin
         $this->photoService = new PhotoService();
     }
 
-    public function index(){
+    public function index()
+    {
         $chapter_id = input('chapter_id');
         $chapter = Chapter::get($chapter_id);
         $book_id = input('book_id');
         $book = Book::get($book_id);
         $page = config('page.back_end_page');
         $data = $this->photoService->getAdminPaged($chapter_id, $page);
-        foreach ($data as &$photo) {
+        foreach ($data['photos'] as &$photo) {
+            halt($photo);
             if (empty($photo['img_url'])) {
-                $photo['img_url'] = $this->img_site.'/static/upload/book/'.$book_id.'/'.$chapter_id.'/'.$photo['id'].'.jpg';
+                $photo['img_url'] = $this->img_site . '/static/upload/book/' . $book_id . '/' . $chapter_id . '/' . $photo['id'] . '.jpg';
             }
         }
         $this->assign([
-            'photos'=>$data['photos'],
-            'chapter_id'=>$chapter_id,
-            'book_id'=>$book_id,
-            'book_name'=>$book->book_name,
-            'chapter_name'=>$chapter->chapter_name,
+            'photos' => $data['photos'],
+            'chapter_id' => $chapter_id,
+            'book_id' => $book_id,
+            'book_name' => $book->book_name,
+            'chapter_name' => $chapter->chapter_name,
             'count' => $data['count'],
         ]);
         return view();
     }
 
-    public function clear(){
-        $chapter_id =  input('chapter_id');
-        Photo::destroy(function ($query) use($chapter_id){
-            $query->where('chapter_id','=',$chapter_id);
+    public function clear()
+    {
+        $chapter_id = input('chapter_id');
+        Photo::destroy(function ($query) use ($chapter_id) {
+            $query->where('chapter_id', '=', $chapter_id);
         });
         $this->success('删除章节图片');
     }
 
-    public function delete(){
+    public function delete()
+    {
         $id = input('id');
         Photo::destroy($id);
-        return ['err'=>0,'msg'=>'删除成功'];
+        return ['err' => 0, 'msg' => '删除成功'];
     }
 
-    public function upload(Request $request){
+    public function upload(Request $request)
+    {
         $data = $request->param();
-        $vali = $this->validate($data,'app\admin\validate\Photo.upload');
-        if (true !== $vali){
+        $vali = $this->validate($data, 'app\admin\validate\Photo.upload');
+        if (true !== $vali) {
             $this->error($vali);
         }
         $book_id = $data['book_id'];
@@ -76,45 +81,46 @@ class Photos extends BaseAdmin
             $order = $lastPhoto->pic_order + 1; //拿到最新图片的order，加1
         }
         $files = $request->file('image');
-        foreach($files as $file){
+        foreach ($files as $file) {
             $photo = new Photo();
             $photo->chapter_id = $chapter_id;
             $photo->pic_order = $order;
             $result = $photo->save();
-            if ($result){
-                $dir = App::getRootPath() . 'public/static/upload/book/'.$book_id.'/'.$chapter_id;
-                if (!file_exists($dir)){
-                    mkdir($dir,0777,true);
+            if ($result) {
+                $dir = App::getRootPath() . 'public/static/upload/book/' . $book_id . '/' . $chapter_id;
+                if (!file_exists($dir)) {
+                    mkdir($dir, 0777, true);
                 }
-                $file->validate(['size'=>2048000,'ext'=>'jpg,png,gif'])->move($dir,$photo->id.'.jpg');
+                $file->validate(['size' => 2048000, 'ext' => 'jpg,png,gif'])->move($dir, $photo->id . '.jpg');
             }
             $order++;
         }
         $this->success('上传成功');
     }
 
-    public function edit(Request $request){
-        if ($request->isPost()){
+    public function edit(Request $request)
+    {
+        if ($request->isPost()) {
             $data = $request->param();
-            $vali = $this->validate($data,'app\admin\validate\Photo.edit');
-            if (true !== $vali){
+            $vali = $this->validate($data, 'app\admin\validate\Photo.edit');
+            if (true !== $vali) {
                 $this->error($vali);
             }
             $photo = new Photo();
             $result = $photo->isUpdate(true)->save($data);
-            if ($result){
-                if (count($request->file()) > 0){
+            if ($result) {
+                if (count($request->file()) > 0) {
                     $file = $request->file('image');
-                    $dir = App::getRootPath() . 'public/static/upload/book/'.$data['book_id'].'/'.$data['chapter_id'];
-                    if (!file_exists($dir)){
-                        mkdir($dir,0777,true);
+                    $dir = App::getRootPath() . 'public/static/upload/book/' . $data['book_id'] . '/' . $data['chapter_id'];
+                    if (!file_exists($dir)) {
+                        mkdir($dir, 0777, true);
                     }
-                    if ($file){
-                        $file->validate(['size'=>2048000,'ext'=>'jpg,png,gif'])->move($dir,$photo->id.'.jpg');
+                    if ($file) {
+                        $file->validate(['size' => 2048000, 'ext' => 'jpg,png,gif'])->move($dir, $photo->id . '.jpg');
                     }
                 }
                 $this->success('编辑成功');
-            }else{
+            } else {
                 $this->error('编辑失败');
             }
         }
@@ -122,7 +128,7 @@ class Photos extends BaseAdmin
         $chapter_id = input('chapter_id');
         $id = input('id');
         $photo = Photo::get($id);
-        if (!$photo){
+        if (!$photo) {
             $this->error('图片不存在');
         }
         $this->assign([
