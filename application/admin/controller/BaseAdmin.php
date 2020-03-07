@@ -18,6 +18,7 @@ class BaseAdmin extends Controller
 {
     protected $prefix;
     protected $end_point;
+    protected $img_site;
     protected function initialize()
     {
         $this->checkAuth();
@@ -28,10 +29,10 @@ class BaseAdmin extends Controller
     {
         parent::__construct($app);
         $this->prefix = config('database.prefix');
-        $img_site = config('site.img_site');
+        $this->img_site = config('site.img_site');
         $this->end_point = config('seo.book_end_point');
         View::share([
-            'img_site' => $img_site,
+            'img_site' => $this->img_site,
         ]);
     }
 

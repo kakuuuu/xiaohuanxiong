@@ -8,9 +8,10 @@
 
 namespace app\service;
 
+use app\index\controller\Base;
 use app\model\Photo;
 
-class PhotoService
+class PhotoService extends Base
 {
     public function getLastPhoto($chapter_id)
     {

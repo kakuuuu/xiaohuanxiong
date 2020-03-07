@@ -50,12 +50,7 @@
                         <tr class="text-c">
                             <td>{$vo.id}</td>
                             <td>
-                                {if empty($vo.img_url)} 
-                                <img width="45px;" height="auto" class="picture-thumb"
-                                     src="{$img_site}/static/upload/book/{$book_id}/{$chapter_id}/{$vo.id}.jpg">
-                                {else /}
                                 <img width="45px;" height="auto" class="picture-thumb" src="{$vo.img_url}">
-                                {/if}
                             </td>
                             <td>{$vo.pic_order}</td>
                             <td>{$vo.create_time|date='Y-m-d'}</td>
