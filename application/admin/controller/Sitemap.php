@@ -57,7 +57,7 @@ class Sitemap extends BaseAdmin
                 $book['param'] = $book['unique_id'];
             }
             $temp = array(
-                'loc' => $site_name . '/' . BOOKCTRL . '/' . $book->id,
+                'loc' => $site_name . '/' . BOOKCTRL . '/' . $book['param'],
                 'priority' => '0.9',
             );
             array_push($data, $temp);
