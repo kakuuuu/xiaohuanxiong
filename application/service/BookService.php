@@ -22,10 +22,10 @@ class BookService extends Base
         if ($this->request->isMobile()) {
             $num = $mobile_page;
         }
-        $data = Book::where($where)->with('chapters')->order($order, 'desc')
+        $data = Book::where($where)->order($order, 'desc')
             ->paginate($num, false);
         foreach ($data as &$book) {
-            $book['chapter_count'] = count($book->chapters);
+            $book['chapter_count'] = Chapter::where('book_id','=',$book->id)->count();
             if (empty($book['cover_url'])) {
                 $book['cover_url'] = $this->img_site.'/static/upload/book/'.$book['id'].'/cover.jpg';
             }
@@ -56,7 +56,7 @@ class BookService extends Base
             $data = Book::onlyTrashed()->where($where);
         }
         $page = config('page.back_end_page');
-        $books = $data->with('author,chapters')->order('id', 'desc')
+        $books = $data->with('author')->order('id', 'desc')
             ->paginate($page, false,
                 [
                     'query' => request()->param(),
@@ -75,7 +75,7 @@ class BookService extends Base
         $books = Book::where($where)->with('author,chapters')
             ->limit($num)->order($order, 'desc')->select();
         foreach ($books as &$book) {
-            $book['chapter_count'] = count($book->chapters);
+            $book['chapter_count'] = Chapter::where('book_id','=',$book->id)->count();
             $book['taglist'] = explode('|', $book->tags);
             if (empty($book['cover_url'])) {
                 $book['cover_url'] = $this->img_site.'/static/upload/book/'.$book['id'].'/cover.jpg';
@@ -95,9 +95,8 @@ class BookService extends Base
             ->group('book_id')->select();
         if (count($data) > 0) {
             foreach ($data as &$item) {
-                $chapters = Chapter::where('book_id', '=', $item['book_id'])->select();
                 $book = $item['book'];
-                $book['chapter_count'] = count($chapters);
+                $book['chapter_count'] = Chapter::where('book_id','=',$book->id)->count();
                 $book['taglist'] = explode('|', $item['book']['tags']);
                 $item['book'] = $book;
                 if (empty($book['cover_url'])) {
@@ -213,9 +212,9 @@ FROM ' . $this->prefix . 'book AS ad1 JOIN (SELECT ROUND(RAND() * ((SELECT MAX(i
  GROUP BY book_id ORDER BY clicks DESC LIMIT :num", ['cdate' => $date, 'num' => $num]);
         $books = array();
         foreach ($data as $val) {
-            $book = Book::with('chapters')->find($val['book_id']);
+            $book = Book::find($val['book_id']);
             if ($book) {
-                $book['chapter_count'] = count($book->chapters);
+                $book['chapter_count'] = Chapter::where('book_id','=',$book->id)->count();
                 $book['taglist'] = explode('|', $book->tags);
                 $book['clicks'] = $val['clicks'];
                 if (empty($book['cover_url'])) {
