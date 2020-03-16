@@ -11,6 +11,7 @@ namespace app\ucenter\controller;
 
 use app\model\RedisHelper;
 use app\model\User;
+use app\model\UserFinance;
 use app\service\PromotionService;
 use think\App;
 use think\Controller;
@@ -74,11 +75,12 @@ class Account extends Controller
                         if ($pid > 0) {
                             $puser = User::find($pid);
                             if ($puser) {
-                                if ($puser->vip_expire_time < time()) { //说明vip已经过期
-                                    $puser->vip_expire_time = time() + 24 * 60 * 60;
-                                } else { //vip没过期，则在现有vip时间上增加
-                                    $puser->vip_expire_time = $user->vip_expire_time + 24 * 60 * 60;
-                                }
+                                $finance = new UserFinance();
+                                $finance->user_id = $pid;
+                                $finance->money = config('payment.reg_rewards');
+                                $finance->usage = 4;
+                                $finance->summary = '下线注册奖励';
+                                $finance->save();
                             }
                         }
 
