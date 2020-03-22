@@ -33,8 +33,8 @@
                             </p>
                             <div class="bottom">
                                 <p class="chapter" style="width:181px;">
-                                    <span>总计</span>
-                                    <a href="#" target="_blank">{$keyword.chapter_count}话</a>
+                                    <span>更新</span>
+                                    <a href="#" target="_blank">{$keyword.last_chapter.chapter_name}</a>
                                 </p>
                                 <div class="desc"> {$keyword.summary|subtext=35}...</div>
 
@@ -77,8 +77,8 @@
                                     </span>
                                 </p>
                                 <p class="chapter" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
-                                    <span>总计</span>
-                                    <a href="/{$book_ctrl}/{$keyword.param}" target="_blank">{$keyword.chapter_count}话 </a>
+                                    <span>更新</span>
+                                    <a href="/{$book_ctrl}/{$keyword.param}" target="_blank">{$keyword.last_chapter.chapter_name} </a>
                                 </p>
                                 <div class="desc"> {$keyword.summary|subtext=20}...</div>
                                 <p>

@@ -82,9 +82,9 @@
                                 </a>
                             </h2>
                             <p class="zl"><span>评分:</span><span class="mh-star-line star-4"></span></p>
-                            <p class="chapter"><span>总计</span>
+                            <p class="chapter"><span>更新</span>
                                 <a href="/{$book_ctrl}/{$vo.param}">
-                                    {$vo.chapter_count}话
+                                    {$vo.last_chapter.chapter_name}
                                 </a>
                             </p>
                         </div>
@@ -189,9 +189,9 @@
 
                                 </h2>
                                 <p class="zl"><span>评分:</span><span class="mh-star-line star-4"></span></p>
-                                <p class="chapter"><span>更新至</span>
+                                <p class="chapter"><span>更新</span>
                                     <a href="/{$book_ctrl}/{$vo.param}">
-                                        第{$vo.chapter_count}话
+                                        {$vo.last_chapter.chapter_name}
                                     </a>
 
                                 </p>
@@ -329,9 +329,9 @@
                                     </a>
                                 </h2>
                                 <p class="zl"><span>评分:</span><span class="mh-star-line star-4"></span></p>
-                                <p class="chapter"><span>更新至</span>
+                                <p class="chapter"><span>更新</span>
                                     <a href="/{$book_ctrl}/{$vo.param}">
-                                        第{$vo.chapter_count}话
+                                        {$vo.last_chapter.chapter_name}
                                     </a>
 
                                 </p>
