@@ -52,8 +52,12 @@
                                 </h2>
                                 <p class="zl"></p>
                                 <p class="chapter" style="width: 181px;">
-                                    <span>总计</span>
-                                    <a href="/{$book_ctrl}/{$vo.id}">{$vo.last_chapter.chapter_name}</a>
+                                    <span>更新</span>
+                                    {empty name="vo.last_chapter"}
+                                    <a href="#" rel="chapter">无章节</a>
+                                    {else /}
+                                    <a href="/{$chapter_ctrl}/{$vo.last_chapter.id}/" target="_blank">{$vo.last_chapter.chapter_name}</a>
+                                    {/empty}
                                 </p>
                             </div>
 

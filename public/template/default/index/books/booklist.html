@@ -38,7 +38,11 @@
                 <a href="/{$book_ctrl}/{$vo.param}">{$vo.book_name}</a>
             </p>
             <p class="manga-list-2-tip">
-                <a href="/{$book_ctrl}/{$vo.param}">已更新 {$vo.last_chapter.chapter_name}话</a>
+                {empty name="vo.last_chapter"}
+                <a href="#" rel="chapter">无章节</a>
+                {else /}
+                <a href="/{$chapter_ctrl}/{$vo.last_chapter.id}/" target="_blank">{$vo.last_chapter.chapter_name}</a>
+                {/empty}
             </p>
         </li>
         {/volist}

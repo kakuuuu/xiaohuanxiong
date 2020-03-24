@@ -330,9 +330,11 @@
                                 </h2>
                                 <p class="zl"><span>评分:</span><span class="mh-star-line star-4"></span></p>
                                 <p class="chapter"><span>更新</span>
-                                    <a href="/{$book_ctrl}/{$vo.param}">
-                                        {$vo.last_chapter.chapter_name}
-                                    </a>
+                                    {empty name="vo.last_chapter"}
+                                    <a href="#" rel="chapter">无章节</a>
+                                    {else /}
+                                    <a href="/{$chapter_ctrl}/{$vo.last_chapter.id}/" target="_blank">{$vo.last_chapter.chapter_name}</a>
+                                    {/empty}
 
                                 </p>
                             </div>

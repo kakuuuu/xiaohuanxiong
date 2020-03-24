@@ -199,7 +199,11 @@
                                 </h2>
                                 <p class="zl">{$vo.summary|subtext=13}...</p>
                                 <p class="chapter">
-                                    <span>总共{$vo.last_chapter.chapter_name}话</span>
+                                    {empty name="vo.last_chapter"}
+                                    <a href="#" rel="chapter">无章节</a>
+                                    {else /}
+                                    <a href="/{$chapter_ctrl}/{$vo.last_chapter.id}/" target="_blank">{$vo.last_chapter.chapter_name}</a>
+                                    {/empty}
                                 </p>
                             </div>
                         </div>
