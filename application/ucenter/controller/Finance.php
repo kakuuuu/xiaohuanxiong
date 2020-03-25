@@ -260,6 +260,7 @@ class Finance extends BaseUcenter
             if (!$redis->exists($this->redis_prefix . ':user_buy_lock:' . $this->uid)) { //如果没上锁，则该用户可以进行购买操作
                 $arr = config('payment.vip'); //拿到vip配置数组
                 $month = (int)$request->param('month'); //拿到用户选择的vip
+                $this->balance = $this->financeService->getBalance($this->uid); //这里不查询缓存，直接查数据库更准确
                 foreach ($arr as $key => $value) {
                     if ((int)$value['month'] == $month) {
                         if ((int)$value['price'] > $this->balance) { //如果vip价格大于用户余额
