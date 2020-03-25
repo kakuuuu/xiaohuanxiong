@@ -80,7 +80,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../novel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -670,6 +670,7 @@
       <workItem from="1584958397159" duration="47000" />
       <workItem from="1585023522566" duration="1209000" />
       <workItem from="1585026735238" duration="606000" />
+      <workItem from="1585105724918" duration="695000" />
     </task>
     <servers />
   </component>
