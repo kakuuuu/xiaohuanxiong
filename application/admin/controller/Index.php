@@ -214,7 +214,7 @@ INFO;
         $client = new Client();
         $srcUrl = Env::get('root_path') . "/public/static/html/version.txt";
         $localVersion = (int)str_replace('.', '', file_get_contents($srcUrl));
-        $server = "http://update.xhxcms.xyz";
+        $server = "http://v3.xhxup.top/";
         $serverFileUrl = $server . "/public/static/html/version.txt";
         $res = $client->request('GET', $serverFileUrl); //读取版本号
         $serverVersion = (int)str_replace('.', '', $res->getBody());
@@ -224,7 +224,7 @@ INFO;
             file_put_contents($srcUrl, (string)$res->getBody(), true); //将版本号写入到本地文件
             echo '<p style="padding-left:15px;font-weight: 400;color:#999;">覆盖版本号</p>';
             for ($i = $localVersion + 1; $i <= $serverVersion; $i++) {
-                $res = $client->request('GET', "http://config.xhxcms.xyz/" . $i . ".json");
+                $res = $client->request('GET', "http://v3up.xhxup.top/" . $i . ".json");
                 if ((int)($res->getStatusCode()) == 200) {
                     $json = json_decode($res->getBody(), true);
 
