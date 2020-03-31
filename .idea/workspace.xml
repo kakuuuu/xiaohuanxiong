@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7e28971b-6d16-47ff-83e3-4ccc7a041382" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/controller/Chapters.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Chapters.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -675,7 +675,8 @@
       <workItem from="1585026735238" duration="606000" />
       <workItem from="1585105724918" duration="695000" />
       <workItem from="1585225896093" duration="70000" />
-      <workItem from="1585577171300" duration="413000" />
+      <workItem from="1585577171300" duration="710000" />
+      <workItem from="1585630204466" duration="1215000" />
     </task>
     <servers />
   </component>
@@ -713,10 +714,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583121698293" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585225965090">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585577885585">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585225965090" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585577885585" />
     <state x="774" y="333" key="NewPhpClassDialog" timestamp="1582201232697">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -53,22 +53,24 @@ class Chapters extends Base
             }
         }
 
-        $uid = session('xwx_user_id');
-
-        if (!is_null($uid)) { //如果用户已经登录
-            $vip_expire_time = session('xwx_vip_expire_time'); //用户等级
-            $time = $vip_expire_time - time(); //计算vip用户时长
-            if ($time > 0) { //如果是vip会员且没过期，则可以不受限制
-                $flag = true;
-            } else { //如果不是会员，则判断用户是否购买本章节
-                $map[] = ['user_id', '=', $uid];
-                $map[] = ['chapter_id', '=', $id];
-                $userBuy = UserBuy::where($map)->find();
-                if (!is_null($userBuy)) { //说明用户购买了本章节
+        if (!$flag) {
+            $uid = session('xwx_user_id');
+            if (!is_null($uid)) { //如果用户已经登录
+                $vip_expire_time = session('xwx_vip_expire_time'); //用户等级
+                $time = $vip_expire_time - time(); //计算vip用户时长
+                if ($time > 0) { //如果是vip会员且没过期，则可以不受限制
                     $flag = true;
+                } else { //如果不是会员，则判断用户是否购买本章节
+                    $map[] = ['user_id', '=', $uid];
+                    $map[] = ['chapter_id', '=', $id];
+                    $userBuy = UserBuy::where($map)->find();
+                    if (!is_null($userBuy)) { //说明用户购买了本章节
+                        $flag = true;
+                    }
                 }
             }
         }
+
         if ($flag) {
             $num = config('page.img_per_page');
             $page = empty(input('page')) ? '1' : input('page');
