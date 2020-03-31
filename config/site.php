@@ -4,7 +4,7 @@
             'img_site' => 'http://hm.com',
             'site_name' => '土豪漫画',
             'salt' => 'hanmantai',
-            'api_key' => 'abcde', 
-            'app_key' => 'hahmh',
+            'api_key' => 'abcde',   
             'tpl' => 'default',
-        ];
+            'payment' => 'Vkzf'            
+            ];

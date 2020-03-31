@@ -18,7 +18,7 @@ class Books extends Base
     {
         parent::initialize();
         cookie('nav_switch', 'booklist'); //设置导航菜单active
-        $this->bookService = new \app\service\BookService();
+        $this->bookService = app('bookService');
     }
 
     public function index()

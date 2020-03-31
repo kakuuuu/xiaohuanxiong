@@ -20,7 +20,7 @@ class Chapters extends Base
     protected function initialize()
     {
         parent::initialize();
-        $this->photoService = new PhotoService();
+        $this->photoService = app('chapterService');
     }
 
     public function index($id)

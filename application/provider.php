@@ -11,5 +11,13 @@
 
 // 容器Provider定义文件
 return [
-
+    'adminService' => \app\service\AdminService::class,
+    'authorService' => \app\service\AuthorService::class,
+    'bookService' => \app\service\BookService::class,
+    'chapterService' => \app\service\ChapterService::class,
+    'financeService' => \app\service\FinanceService::class,
+    'photoService' => \app\service\PhotoService::class,
+    'promotionService' => \app\service\PromotionService::class,
+    'tagsService' => \app\service\TagsService::class,
+    'userService' => \app\service\UserService::class
 ];

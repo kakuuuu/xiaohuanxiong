@@ -25,8 +25,8 @@ class Write extends Controller
 
     public function initialize()
     {
-        $this->chapterService = new \app\service\ChapterService();
-        $this->photoService = new \app\service\PhotoService();
+        $this->chapterService = app('chapterService');
+        $this->photoService = app('photoService');
         $this->conn = [
             'type'            => 'mysql',
             'hostname'        => '数据库ip',
