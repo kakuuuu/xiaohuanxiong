@@ -18,7 +18,7 @@ class Admins extends BaseAdmin
 {
 
     public function index(){
-        $adminService = new AdminService();
+        $adminService = app('adminService');
         $data = $adminService->GetAll();
         $this->assign([
             'admins' => $data['admins'],
