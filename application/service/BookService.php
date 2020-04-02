@@ -25,12 +25,6 @@ class BookService extends Base
         $data = Book::where($where)->order($order, 'desc')
             ->paginate($num, false);
         foreach ($data as &$book) {
-            $query = Db::query('SELECT * FROM '.$this->prefix.
-                'chapter WHERE id = (SELECT MAX(id) FROM (SELECT id FROM xwx_chapter WHERE book_id=?) as a)',
-                [$book['id']]);
-            if (count($query) > 0) {
-                $book['last_chapter'] = $query[0];
-            }
             if (empty($book['cover_url'])) {
                 $book['cover_url'] = $this->img_site.'/static/upload/book/'.$book['id'].'/cover.jpg';
             }
@@ -80,12 +74,6 @@ class BookService extends Base
         $books = Book::where($where)->with('author,chapters')
             ->limit($num)->order($order, 'desc')->select();
         foreach ($books as &$book) {
-            $query = Db::query('SELECT * FROM '.$this->prefix.
-                'chapter WHERE id = (SELECT MAX(id) FROM (SELECT id FROM xwx_chapter WHERE book_id=?) as a)',
-                [$book['id']]);
-            if (count($query) > 0) {
-                $book['last_chapter'] = $query[0];
-            }
             $book['taglist'] = explode('|', $book->tags);
             if (empty($book['cover_url'])) {
                 $book['cover_url'] = $this->img_site.'/static/upload/book/'.$book['id'].'/cover.jpg';
@@ -106,12 +94,6 @@ class BookService extends Base
         if (count($data) > 0) {
             foreach ($data as &$item) {
                 $book = $item['book'];
-                $query = Db::query('SELECT * FROM '.$this->prefix.
-                    'chapter WHERE id = (SELECT MAX(id) FROM (SELECT id FROM xwx_chapter WHERE book_id=?) as a)',
-                    [$book['id']]);
-                if (count($query) > 0) {
-                    $book['last_chapter'] = $query[0];
-                }
                 $book['taglist'] = explode('|', $item['book']['tags']);
                 $item['book'] = $book;
                 if (empty($book['cover_url'])) {
@@ -140,12 +122,6 @@ class BookService extends Base
         }
         $books = Book::where($map)->limit(10)->select();
         foreach ($books as &$book) {
-            $query = Db::query('SELECT * FROM '.$this->prefix.
-                'chapter WHERE id = (SELECT MAX(id) FROM (SELECT id FROM xwx_chapter WHERE book_id=?) as a)',
-                [$book['id']]);
-            if (count($query) > 0) {
-                $book['last_chapter'] = $query[0];
-            }
             if (empty($book['cover_url'])) {
                 $book['cover_url'] = $this->img_site.'/static/upload/book/'.$book['id'].'/cover.jpg';
             }
@@ -167,12 +143,6 @@ class BookService extends Base
     {
         $books = Book::where('tags', 'like', '%' . $tag . '%')->select();
         foreach ($books as &$book) {
-            $query = Db::query('SELECT * FROM '.$this->prefix.
-                'chapter WHERE id = (SELECT MAX(id) FROM (SELECT id FROM xwx_chapter WHERE book_id=?) as a)',
-                [$book['id']]);
-            if (count($query) > 0) {
-                $book['last_chapter'] = $query[0];
-            }
             if (empty($book['cover_url'])) {
                 $book['cover_url'] = $this->img_site.'/static/upload/book/'.$book['id'].'/cover.jpg';
             }
@@ -193,12 +163,6 @@ FROM ' . $this->prefix . 'book AS ad1 JOIN (SELECT ROUND(RAND() * ((SELECT MAX(i
  AS t2 WHERE ad1.id >= t2.id ORDER BY ad1.id LIMIT ' . $num . ') as a
  INNER JOIN author as b on a.author_id = b.id');
         foreach ($books as &$book) {
-            $query = Db::query('SELECT * FROM '.$this->prefix.
-                'chapter WHERE id = (SELECT MAX(id) FROM (SELECT id FROM xwx_chapter WHERE book_id=?) as a)',
-                [$book['id']]);
-            if (count($query) > 0) {
-                $book['last_chapter'] = $query[0];
-            }
             if (empty($book['cover_url'])) {
                 $book['cover_url'] = $this->img_site.'/static/upload/book/'.$book['id'].'/cover.jpg';
             }
@@ -231,12 +195,6 @@ FROM ' . $this->prefix . 'book AS ad1 JOIN (SELECT ROUND(RAND() * ((SELECT MAX(i
         foreach ($data as $val) {
             $book = Book::find($val['book_id']);
             if ($book) {
-                $query = Db::query('SELECT * FROM '.$this->prefix.
-                    'chapter WHERE id = (SELECT MAX(id) FROM (SELECT id FROM xwx_chapter WHERE book_id=?) as a)',
-                    [$book['id']]);
-                if (count($query) > 0) {
-                    $book['last_chapter'] = $query[0];
-                }
                 $book['taglist'] = explode('|', $book->tags);
                 $book['clicks'] = $val['clicks'];
                 if (empty($book['cover_url'])) {

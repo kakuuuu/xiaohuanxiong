@@ -21,14 +21,17 @@
   <component name="ChangeListManager">
     <list default="true" id="7e28971b-6d16-47ff-83e3-4ccc7a041382" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/controller/Admins.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Admins.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/controller/Authors.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Authors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/controller/Books.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Books.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/controller/Chapters.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Chapters.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/controller/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/controller/Photos.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Photos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/controller/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Tag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/controller/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/service/BookService.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/service/BookService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/template/default/index/books/booklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/books/booklist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/template/default/index/books/pc_booklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/books/pc_booklist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/template/default/index/books/pc_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/books/pc_index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/template/default/index/books/pc_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/books/pc_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/template/default/index/books/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/books/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/template/default/index/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/index/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/template/default/index/index/pc_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/index/pc_index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/template/default/index/rank/pc_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/rank/pc_index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/template/default/ucenter/finance/pc_kami.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/ucenter/finance/pc_kami.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/template/default/ucenter/finance/pc_vipexchange.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/ucenter/finance/pc_vipexchange.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -703,7 +706,8 @@
       <workItem from="1585577171300" duration="710000" />
       <workItem from="1585630204466" duration="1215000" />
       <workItem from="1585633798360" duration="4888000" />
-      <workItem from="1585652877058" duration="415000" />
+      <workItem from="1585652877058" duration="570000" />
+      <workItem from="1585809406848" duration="529000" />
     </task>
     <servers />
   </component>
@@ -741,10 +745,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583121698293" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585648214214">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585653446837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585648214214" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585653446837" />
     <state x="774" y="333" key="NewPhpClassDialog" timestamp="1582201232697">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -757,10 +761,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1578039721483" />
-    <state x="567" y="225" width="786" height="600" key="find.popup" timestamp="1585026647910">
+    <state x="567" y="225" width="786" height="600" key="find.popup" timestamp="1585809933685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="567" y="225" width="786" height="600" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585026647910" />
+    <state x="567" y="225" width="786" height="600" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585809933685" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1577258501977">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

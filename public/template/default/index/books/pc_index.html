@@ -199,11 +199,7 @@
                                 </h2>
                                 <p class="zl">{$vo.summary|subtext=13}...</p>
                                 <p class="chapter">
-                                    {empty name="vo.last_chapter"}
-                                    <a href="#" rel="chapter">无章节</a>
-                                    {else /}
-                                    <a href="/{$chapter_ctrl}/{$vo.last_chapter.id}/" target="_blank">{$vo.last_chapter.chapter_name}</a>
-                                    {/empty}
+                                    {$vo.summary}
                                 </p>
                             </div>
                         </div>

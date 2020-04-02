@@ -33,12 +33,7 @@
                             </p>
                             <div class="bottom">
                                 <p class="chapter" style="width:181px;">
-                                    <span>更新</span>
-                                    {empty name="vo.last_chapter"}
-                                    <a href="#" rel="chapter">无章节</a>
-                                    {else /}
-                                    <a href="/{$chapter_ctrl}/{$vo.last_chapter.id}/" target="_blank">{$vo.last_chapter.chapter_name}</a>
-                                    {/empty}
+                                    {$vo.summary}
                                 </p>
                                 <div class="desc"> {$keyword.summary|subtext=35}...</div>
 
@@ -81,12 +76,7 @@
                                     </span>
                                 </p>
                                 <p class="chapter" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
-                                    <span>更新</span>
-                                    {empty name="vo.last_chapter"}
-                                    <a href="#" rel="chapter">无章节</a>
-                                    {else /}
-                                    <a href="/{$chapter_ctrl}/{$vo.last_chapter.id}/" target="_blank">{$vo.last_chapter.chapter_name}</a>
-                                    {/empty}
+                                    {$vo.summary}
                                 </p>
                                 <div class="desc"> {$keyword.summary|subtext=20}...</div>
                                 <p>
