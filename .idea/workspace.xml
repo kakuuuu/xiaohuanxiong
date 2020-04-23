@@ -21,17 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7e28971b-6d16-47ff-83e3-4ccc7a041382" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/service/BookService.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/service/BookService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/index/books/booklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/books/booklist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/index/books/pc_booklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/books/pc_booklist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/index/books/pc_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/books/pc_index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/index/books/pc_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/books/pc_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/index/books/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/books/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/index/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/index/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/index/index/pc_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/index/pc_index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/index/rank/pc_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/rank/pc_index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/ucenter/finance/pc_kami.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/ucenter/finance/pc_kami.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/ucenter/finance/pc_vipexchange.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/ucenter/finance/pc_vipexchange.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +100,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../raccoon5" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -708,6 +697,9 @@
       <workItem from="1585633798360" duration="4888000" />
       <workItem from="1585652877058" duration="570000" />
       <workItem from="1585809406848" duration="529000" />
+      <workItem from="1585832362260" duration="92000" />
+      <workItem from="1585833419164" duration="50000" />
+      <workItem from="1586405749216" duration="96000" />
     </task>
     <servers />
   </component>
@@ -745,10 +737,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583121698293" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585653446837">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1586405844635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585653446837" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586405844635" />
     <state x="774" y="333" key="NewPhpClassDialog" timestamp="1582201232697">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -765,9 +757,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="567" y="225" width="786" height="600" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585809933685" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1577258501977">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577258501977" />
   </component>
 </project>
