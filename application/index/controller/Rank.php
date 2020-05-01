@@ -40,22 +40,22 @@ class Rank extends Base
 
         $tops = cache('tops_rank');
         if (!$tops) {
-            $tops = $this->bookService->getBooks($this->end_point, 'last_time', [['is_top', '=', '1']], 30);
+            $tops = $this->bookService->getBooks('last_time', [['is_top', '=', '1']], 30);
             cache('tops_rank', $tops, null, 'redis');
         }
 
-        $most_charged = cache('most_charged');
-        if (!$most_charged) {
-            $arr = $this->bookService->getMostChargedBook();
-            if (count($arr) > 0) {
-                foreach ($arr as $item) {
-                    $most_charged[] = $item['book'];
-                }
-            } else {
-                $arr = [];
-            }
-            cache('most_charged', $most_charged, null, 'redis');
-        }
+//        $most_charged = cache('most_charged');
+//        if (!$most_charged) {
+//            $arr = $this->bookService->getMostChargedBook();
+//            if (count($arr) > 0) {
+//                foreach ($arr as $item) {
+//                    $most_charged[] = $item['book'];
+//                }
+//            } else {
+//                $arr = [];
+//            }
+//            cache('most_charged', $most_charged, null, 'redis');
+//        }
 
         $this->assign([
             'list' => [
