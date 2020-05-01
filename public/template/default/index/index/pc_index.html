@@ -271,9 +271,9 @@
         </ul>
     </div>
     <div class="index-rank">
-        <div class="index-rank-title">充值榜<a href="/{$rank_ctrl}" class="more">更多</a></div>
+        <div class="index-rank-title">推荐榜<a href="/{$rank_ctrl}" class="more">更多</a></div>
         <ul class="index-rank-list">
-            {volist name="most_charged" id="vo" key="k" offset="0" length="4"}
+            {volist name="tops" id="vo" key="k" offset="0" length="4"}
             <li>
                 <div class="cover">
                     <a href="/{$book_ctrl}/{$vo.param}">

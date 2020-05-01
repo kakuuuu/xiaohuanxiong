@@ -21,6 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7e28971b-6d16-47ff-83e3-4ccc7a041382" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/books/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/books/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/books/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/books/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/controller/Rank.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Rank.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/install/sql/install.sql" beforeDir="false" afterPath="$PROJECT_DIR$/application/install/sql/install.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/template/default/index/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/index/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/template/default/index/index/pc_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/index/index/pc_index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +107,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../raccoon5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -700,6 +707,8 @@
       <workItem from="1585832362260" duration="92000" />
       <workItem from="1585833419164" duration="50000" />
       <workItem from="1586405749216" duration="96000" />
+      <workItem from="1588307742152" duration="601000" />
+      <workItem from="1588308540523" duration="671000" />
     </task>
     <servers />
   </component>

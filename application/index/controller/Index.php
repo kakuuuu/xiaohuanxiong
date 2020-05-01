@@ -45,18 +45,24 @@ class Index extends Base
             cache('endsHomepage', $ends, null, 'redis');
         }
 
-        $most_charged = cache('mostCharged');
-        if (!$most_charged) {
-            $arr = $this->bookService->getMostChargedBook();
-            if (count($arr) > 0) {
-                foreach ($arr as $item) {
-                    $most_charged[] = $item['book'];
-                }
-            } else {
-                $arr = [];
-            }
-            cache('mostCharged', $most_charged, null, 'redis');
+        $tops = cache('topsHomepage');
+        if (!$tops) {
+            $tops = $this->bookService->getBooks( $this->end_point, 'last_time', [['is_top', '=', '1']], 30);
+            cache('topsHomepage', $tops, null, 'redis');
         }
+
+//        $most_charged = cache('mostCharged');
+//        if (!$most_charged) {
+//            $arr = $this->bookService->getMostChargedBook();
+//            if (count($arr) > 0) {
+//                foreach ($arr as $item) {
+//                    $most_charged[] = $item['book'];
+//                }
+//            } else {
+//                $arr = [];
+//            }
+//            cache('mostCharged', $most_charged, null, 'redis');
+//        }
 
         $tags = cache('tags');
         if (!$tags) {
@@ -83,7 +89,7 @@ class Index extends Base
             'newest' => $newest,
             'hot' => $hot_books,
             'ends' => $ends,
-            'most_charged' => $most_charged,
+            'tops' => $tops,
             'tags' => $tags,
             'catelist' => $catelist
         ]);

@@ -38,6 +38,11 @@ class Rank extends Base
             cache('ends_homepage', $ends, null, 'redis');
         }
 
+        $tops = cache('tops_rank');
+        if (!$tops) {
+            $tops = $this->bookService->getBooks($this->end_point, 'last_time', [['is_top', '=', '1']], 30);
+            cache('tops_rank', $tops, null, 'redis');
+        }
 
         $most_charged = cache('most_charged');
         if (!$most_charged) {
@@ -57,7 +62,7 @@ class Rank extends Base
                 ['keyword' => $newest, 'title' => '新书榜', 'id' => 'newest'],
                 ['keyword' => $hot_books, 'title' => '人气榜', 'id' => 'hot'],
                 ['keyword' => $ends, 'title' => '完结榜', 'id' => 'ends'],
-                ['keyword' => $most_charged, 'title' => '充值榜', 'id' => 'charge']
+                ['keyword' => $tops, 'title' => '推荐榜', 'id' => 'top']
             ],
             'header_title' => '排行榜'
         ]);

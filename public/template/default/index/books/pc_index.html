@@ -52,10 +52,15 @@
                     {else /}
                     <a href="/login" class="btn-1 btn_collection"><i class="icon icon-fav2"></i>收藏</a>
                     {/if}
-                    {if $start == -1}
-                    <a href="#" class="btn-2" rel="nofollow">暂无章节</a>
-                    {else /}
-                        <a href="/{$chapter_ctrl}/{$start}" class="btn-2" rel="nofollow">开始阅读</a>                   
+
+                    {if $book.is_copyright == 1}
+                        <a href="{$book.src_url}" class="btn-2">正版阅读</a>
+                        {else /}
+                        {if $start == -1}
+                        <a href="#" class="btn-2">暂无章节</a>
+                        {else /}
+                        <a href="/{$chapter_ctrl}/{$start}" class="btn-2">开始阅读</a>
+                        {/if}
                     {/if}
                 </div>
             </div>
@@ -145,6 +150,7 @@
                 <div class="detail-list-title" id="detail-list-title">
                     <a href="javascript:void(0);" onclick="sortBtnClick();" mode="0" class="order desc inverted">倒序</a>
                 </div>
+                {if $book.is_copyright == 2}
                 <div id="chapterlistload">
                     <ul class="view-win-list detail-list-select" id="detail-list-select">
                         {volist name="book.chapters" id="vo"}
@@ -177,6 +183,7 @@
                         
                     </script>             
                 </div>
+                {/if}
             </div>
             <div class="index-title">
                 <h2>相关推荐</h2>

@@ -54,6 +54,7 @@
             <span class="detail-list-title-3">{$book.last_time|date='Y-m-d'}更新</span>
             <a href="javascript:void(0);" mode="0" onclick="sortBtnClick(this);" class="detail-list-title-right inverted">倒序</a>
         </div>
+        {if $book.is_copyright == 2}
         <ul class="detail-list-1 detail-list-select" id="detail-list-select">
             {volist name="book.chapters" id="vo"}
             <li>
@@ -64,6 +65,8 @@
             </li>
             {/volist}
         </ul>
+        {/if}
+        
         <div class="detail-fix-bottom">
             {if $Think.session.xwx_user == null}
             <a href="/login" class="collection">
@@ -83,10 +86,14 @@
             <a href="javascript:void(0)" class="btndownload">
                 <img class="detail-bottom-2" src="/static/images/detail-bottom-2.png">
             </a>
-            {if $start == -1}
-            <a href="#" class="detail-bottom-btn">暂无章节</a>
+            {if $book.is_copyright == 1}
+            <a href="{$book.src_url}" class="detail-bottom-btn">正版阅读</a>
             {else /}
-                <a href="/{$chapter_ctrl}/{$start}" class="detail-bottom-btn">开始阅读</a>            
+                {if $start == -1}
+                <a href="#" class="detail-bottom-btn">暂无章节</a>
+                {else /}
+                <a href="/{$chapter_ctrl}/{$start}" class="detail-bottom-btn">开始阅读</a>
+                {/if}
             {/if}
         </div>
         <a class="detail-list-more" id="detail-list-more" href="javascript:void(0);" onclick="charpterMore(this);">展开全部章节</a>
