@@ -47,7 +47,7 @@ class Index extends Base
 
         $tops = cache('topsHomepage');
         if (!$tops) {
-            $tops = $this->bookService->getBooks( $this->end_point, 'last_time', [['is_top', '=', '1']], 30);
+            $tops = $this->bookService->getBooks('last_time', [['is_top', '=', '1']], 30);
             cache('topsHomepage', $tops, null, 'redis');
         }
 
